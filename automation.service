@@ -1,0 +1,9 @@
+[Unit]
+Description=자동 배포 스크립트 실행
+
+[Service]
+Type=simple
+ExecStart=/media/chan/LCW/automation.sh
+WorkingDirectory=/media/chan/LCW
+Environment="PATH=/media/chan/LCW/Automation/venv/bin:/usr/local/bin:/usr/bin:/bin"
+

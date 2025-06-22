@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Justick Automation daily except Monday
+
+[Timer]
+OnCalendar=Tue..Sun 03:40:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

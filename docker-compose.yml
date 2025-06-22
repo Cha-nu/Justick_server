@@ -1,0 +1,27 @@
+services:
+  db:
+    network_mode: "host"
+    image: mysql:8.0
+    container_name: justick-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  app:
+    container_name: justick-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    network_mode: "host"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    restart: always
