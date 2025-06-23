@@ -30,8 +30,8 @@ service 파일을 수정합니다.
 sudo vi automation /etc/systemd/system/automation.service #automation.sh 경로를 설정합니다.  
 vi ~/.config/systemd/user/ justick.service # justick_system의 main.py 경로를 설정합니다.
 
-justick_system 파일이 설치되어 있어야합니다.
-https://github.com/Cha-nu/Justick_server
+justick_system 파일이 설치되어 있어야합니다.  
+https://github.com/Cha-nu/Justick_system
   
 시스템 단위 서비스/타이머 재로드 (수정한 후 필수)  
 sudo systemctl daemon-reload  
@@ -44,3 +44,10 @@ systemctl --user enable justick.timer
 타이머 시작  
 sudo systemctl start automation.timer  
 systemctl --user start justick.timer  
+
+## automation.sh  
+root 권한으로 git config가 설정되어 있어야합니다.
+
+
+완료되면 오전 8시에 크롤러가 작동되는 것을 확인할 수 있습니다.  
+![image](https://github.com/user-attachments/assets/3ff22f47-4d09-4c10-bc9e-7e7b394a975d)
