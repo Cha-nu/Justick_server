@@ -51,3 +51,7 @@ root 권한으로 git config가 설정되어 있어야합니다.
 
 완료되면 오전 8시에 크롤러가 작동되는 것을 확인할 수 있습니다.  
 ![image](https://github.com/user-attachments/assets/3ff22f47-4d09-4c10-bc9e-7e7b394a975d)
+
+## docker 실행
+sudo docker compose build --no-cache # docker를 빌드합니다.
+sudo docker compose up -d # docker를 실행합니다.
