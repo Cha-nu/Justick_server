@@ -43,7 +43,7 @@ else
     echo "[FRONT] 변경사항 없음"
 fi
 
-##### Justick_Spring 자동화 #####
+##### Justick_back 자동화 #####
 
 SPRING_PATH="/media/chan/LCW/Justick_back"
 cd "$SPRING_PATH" || exit 1
@@ -64,7 +64,7 @@ if [[ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]]; then
 
     # 빌드된 jar 복사
     JAR_SRC="$SPRING_PATH/Justick/build/libs/Justick-0.0.2.jar"
-    JAR_DST="/media/chan/LCW/Justick/Justick-0.0.2.jar"
+    JAR_DST="/media/chan/LCW/Justick_server/Justick-0.0.2.jar"
 
     if [ -f "$JAR_SRC" ]; then
         cp "$JAR_SRC" "$JAR_DST" && echo "[SPRING] jar 복사 완료: $JAR_DST"
